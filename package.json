@@ -1,0 +1,10 @@
+{
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}
