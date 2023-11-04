@@ -17,7 +17,7 @@ node_modules/: Directory containing project dependencies.
 First, clone this repository to your local machine in your choice of terminal:
 
 ```bash
-git clone https://github.com/your-username/considition-2023-js-starter-kit.git
+git clone https://github.com/Considition/2023-Javascript.git
 ```
 
 Go to the project directory:
