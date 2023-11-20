@@ -1,42 +1,28 @@
 import fetch from 'node-fetch';
 
-const BASE_URL = 'https://api.considition.com/api/game';
+const BASE_URL = 'https://api.considiton/api/game';
+
+const get = async (apiKey, endpoint) => {
+  const res = await fetch(`${BASE_URL}/${endpoint}`, {
+    headers: {'x-api-key': apiKey}
+  });
+  return await res.json();
+}
 
 export const getMapData = async (apiKey, mapName) => {
-  const response = await fetch(
-    `${BASE_URL}/getmapdata?mapName=${encodeURIComponent(mapName)}`,
-    {
-      headers: {
-        'x-api-key': apiKey,
-      },
-    }
-  );
-  const data = await response.json();
-  return data;
+  return await get(apiKey, `getmapdata?mapName=${encodeURIComponent(mapName)}`)
 };
 
 export const getGeneralData = async (apiKey) => {
-  const response = await fetch(`${BASE_URL}/getgeneralgamedata`, {
-    headers: {
-      'x-api-key': apiKey,
-    },
-  });
-  const data = await response.json();
-  return data;
+  return await get(apiKey, `getgeneralgamedata`)
 };
 
-export const getGame = async (apiKey, id) => {
-  const response = await fetch(`${BASE_URL}/getgamedata/${id}`, {
-    headers: {
-      'x-api-key': apiKey,
-    },
-  });
-  const data = await response.json();
-  return data;
+export const getGame = async (apiKey, mapName) => {
+  return await get(apiKey, `getgamedata/${id}`)
 };
 
 export const submitSolution = async (mapName, solution, apiKey) => {
-  const response = await fetch(
+  const res = await fetch(
     `${BASE_URL}/submitSolution?mapName=${encodeURIComponent(mapName)}`,
     {
       method: 'POST',
@@ -47,6 +33,5 @@ export const submitSolution = async (mapName, solution, apiKey) => {
       body: JSON.stringify(solution),
     }
   );
-  const data = await response.json();
-  return data;
+  return await res.json();
 };
