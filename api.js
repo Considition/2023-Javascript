@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 
-const BASE_URL = 'https://api.considiton/api/game';
+const BASE_URL = 'https://api.considiton.com/api/game';
 
 const get = async (apiKey, endpoint) => {
   const res = await fetch(`${BASE_URL}/${endpoint}`, {
