@@ -74,8 +74,8 @@ rl.question('Select the map you wish to play: ', async (option) => {
   };
 
   if(isHardcore){
-    var hotspot = mapData.hotspots[0];
-    var hotspot2 = mapData.hotspots[1];
+    var hotspot = mapData.hotspots[1];
+    var hotspot2 = mapData.hotspots[2];
 
     solution.locations["location1"] = {
         freestyle9100Count: 1,
